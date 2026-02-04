@@ -100,22 +100,30 @@ The processed data is saved to `processed_data/`:
 ```text
 NextTripRecSys/
 ├── checkpoints/           # Saved models and embeddings
-├── original_data/         # Raw data (train_set.csv, etc.)
-├── processed_data/        # Processed data (train_fe_eng.csv, etc.)
+├── data/
+│   ├── original_data/     # Raw data (train_set.csv, etc.)
+│   └── processed_data/    # Processed data (train_fe_eng.csv, etc.)
 ├── src/
 │   ├── data/              # Data processing pipelines
-│   │   ├── feature_engineering.py  # Raw data -> Features (preprocessing logic)
-│   │   ├── preprocessing.py        # Scaling & ID mapping
-│   │   └── dataset.py              # PyTorch Dataset
-│   ├── models/            # Model architecture (Residual Net)
-│   ├── training/          # Training loop & logic
-│   ├── evaluation/        # Metrics (Precision@K)
+│   │   ├── dataset.py              # PyTorch Dataset
+│   │   ├── feature_engineering.py  # Raw data -> Features
+│   │   └── preprocessing.py        # Scaling & ID mapping
+│   ├── evaluation/        # Metrics
+│   │   └── metrics.py
 │   ├── inference/         # Prediction logic
+│   │   └── predictor.py
+│   ├── models/            # Model architecture
+│   │   └── recsys_model.py
+│   ├── training/          # Training loop & logic
+│   │   └── trainer.py
 │   └── config.py          # Central configuration
-├── train.py               # Main training script
 ├── demo.py                # Inference demo script
+├── fe_eng.py              # Feature engineering script (auxiliary)
+├── implementation_plan.md # Plan for implementation
+├── README.md              # Project documentation
 ├── requirements.txt       # Dependencies
-└── README.md              # Project documentation
+├── total.py               # Monolithic script (deprecated/reference)
+└── train.py               # Main training script
 ```
 
 ## 🚀 Installation
