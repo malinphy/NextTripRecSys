@@ -207,6 +207,8 @@ marimo/_lsp/
 __marimo__/
 implementation_plan.md
 total.py
+
+demo.py
 checkpoints/_city_embedding.pt
 checkpoints/_country_embedding.pt
 checkpoints/_input_projection.pt
@@ -220,4 +222,3 @@ data/original_data/test_set.csv
 data/original_data/train_set.csv
 data/processed_data/final_test.csv
 data/processed_data/train_fe_eng.csv
-demo.py
